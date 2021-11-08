@@ -52,7 +52,7 @@ def InsertDB():
         sql = '''INSERT INTO dangdang(title,price,urls) VALUES("%s","%s","%s")'''
 
         for i in range(len(titles)):
-            # 设置存入信息的数量 学号为031904113 爬取113张
+            # 设置存入信息的数量 爬取113张
             if i >= 113:
                 return
             arg = (titles[i], prices[i], imgs_url[i])  # 设置存入信息
@@ -64,7 +64,7 @@ def InsertDB():
 
 def DownLoadImg():
     for i in range(len(imgs_url)):
-        # 设置存入信息的数量 学号为031904113 爬取113张
+        # 设置存入信息的数量 爬取113张
         if i >= 113:
             return
         resp = requests.get(imgs_url[i])  # 通过requests.get()直接访问图像地址
